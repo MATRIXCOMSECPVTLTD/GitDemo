@@ -14,6 +14,17 @@ jobs:
       - name: run a sample
         run: echo GitDemo
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+              dotnet-version: '4.8.1'
+              
+      - name: Build
+        run: |
+              dotnet restore
+              dotnet build --configuration Release
+              dotnet publish -c Release
+              
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -22,3 +33,4 @@ jobs:
             ${{ github.workspace }}/bin/Release/
             ${{ github.workspace }}/publish/
           retention-days: 7
+      
