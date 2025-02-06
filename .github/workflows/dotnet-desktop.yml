@@ -11,13 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: run a sample
-        run: echo GitDemo
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '4.8.x'    # Using a modern .NET version for the build tools
+          dotnet-version: '8.0.x'    # Using a modern .NET version for the build tools
           
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.1
