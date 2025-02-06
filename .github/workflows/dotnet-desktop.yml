@@ -15,7 +15,7 @@ jobs:
         run: echo GitDemo
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v3
         with:
               dotnet-version: '4.8.1'
               
